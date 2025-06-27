@@ -1,14 +1,16 @@
-[theme]
-primaryColor = "#00ffff"
-backgroundColor = "#0a0a0f"
-secondaryBackgroundColor = "#1a1a2e"
-textColor = "#ffffff"
-
 [server]
 headless = true
-port = 8501
+port = 7860
 enableCORS = false
 enableXsrfProtection = false
 
 [browser]
 gatherUsageStats = false
+serverAddress = "0.0.0.0"
+serverPort = 7860
+
+[theme]
+primaryColor = "#00ffff"
+backgroundColor = "#0a0a0f"
+secondaryBackgroundColor = "#1a1a2e"
+textColor = "#ffffff"
