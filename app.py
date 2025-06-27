@@ -11,7 +11,7 @@ import pandas as pd
 from typing import List, Dict, Any
 import sqlite3
 import io
-import PyPDF2
+import pypdf as PyPDF2
 from docx import Document
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -851,7 +851,8 @@ def admin_dashboard():
                             elif uploaded_file.type == "application/json":
                                 content = str(uploaded_file.read(), "utf-8")
                             elif uploaded_file.type == "application/pdf":
-                                pdf_reader = PyPDF2.PdfReader(io.BytesIO(uploaded_file.read()))
+                                import pypdf
+                                pdf_reader = pypdf.PdfReader(io.BytesIO(uploaded_file.read()))
                                 content = ""
                                 for page in pdf_reader.pages:
                                     content += page.extract_text() + "\n"
